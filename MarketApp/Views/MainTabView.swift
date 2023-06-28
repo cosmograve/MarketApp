@@ -35,7 +35,7 @@ struct MainTabView: View {
                     Text("Главная")
                 }
         }
-        .accentColor(Color("blue"))
+        .accentColor(Color("blueButton"))
         
     }
 }

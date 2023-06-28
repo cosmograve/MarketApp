@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct MainView: View {
+    @StateObject private var viewModel = MainViewViewModel()
+    
     var body: some View {
         VStack {
             MainHeaderView()
@@ -15,8 +17,13 @@ struct MainView: View {
                 .padding(.horizontal, 16)
             Spacer()
             
-            //grid
             
+            if let categories = viewModel.categories {
+                ForEach(categories) { category in
+                    CategoryImageView(categoryItem: category)
+                    
+                }
+            }
         }
     }
 }
@@ -24,5 +31,7 @@ struct MainView: View {
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         MainView()
+        
+        
     }
 }

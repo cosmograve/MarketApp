@@ -16,7 +16,7 @@ struct BlueButton: View {
         } label: {
             ZStack {
                 RoundedRectangle(cornerRadius: 10)
-                    .foregroundColor(Color("blue"))
+                    .foregroundColor(Color("blueButton"))
                 Text(title)
                     .foregroundColor(Color.white)
                     .font(.system(size: 16))

@@ -11,6 +11,7 @@ class LocationManager: NSObject, ObservableObject {
     
     private let locationManager = CLLocationManager()
     @Published var userLocation: CLLocation?
+    
     #warning("сделать переменную паблишд с названием города. получение города - в экстеншне, город передается во вьюмодел. во вью убрать отслеживание менеджера")
     
     override init() {
