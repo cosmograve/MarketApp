@@ -17,7 +17,7 @@ struct MainTabView: View {
                     Text("Главная")
                 }
             
-            SearchView()
+            Text("пусто")
                 .tabItem {
                     Image("search")
                     Text("Главная")
@@ -29,7 +29,7 @@ struct MainTabView: View {
                     Text("Главная")
                 }
             
-            AccountView()
+            Text("пусто")
                 .tabItem {
                     Image("account")
                     Text("Главная")

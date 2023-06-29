@@ -1,27 +1,27 @@
 //
-//  CategoryImageService.swift
+//  DishesImageService.swift
 //  MarketApp
 //
-//  Created by Алексей Авер on 28.06.2023.
+//  Created by Алексей Авер on 29.06.2023.
 //
 
 import Foundation
 import SwiftUI
 import Combine
 
-class CategoryImageService {
+class DishesImageService {
     
     @Published var image: UIImage? = nil
     private var imageSubscription: AnyCancellable?
-    private let categoryItem: CategoryItem
+    private let dishesItem: DishesItem
     
-    init(categoryItem: CategoryItem) {
-        self.categoryItem = categoryItem
+    init(dishesItem: DishesItem) {
+        self.dishesItem = dishesItem
         getImage()
     }
     
     private func getImage() {
-        guard let url = URL(string: categoryItem.imageURL) else {return}
+        guard let url = URL(string: dishesItem.imageURL) else {return}
         
         imageSubscription = NetworkingManager.download(url: url)
             .tryMap({ data -> UIImage? in
@@ -30,7 +30,7 @@ class CategoryImageService {
             .sink(receiveCompletion: NetworkingManager.handleCompletion, receiveValue: { [weak self] (data) in
                 self?.image = data
                 self?.imageSubscription?.cancel()
-                print("cat image got")
+                print("dish image got")
             })
         
     }

@@ -11,7 +11,6 @@ struct Categories: Codable {
     let сategories: [CategoryItem]
     enum CodingKeys: String, CodingKey {
         case сategories
-        
     }
 }
 
