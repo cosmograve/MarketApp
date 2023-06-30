@@ -27,6 +27,8 @@ struct DishesImageView: View {
                         .clipped()
                 }
                 Text(text)
+                    .multilineTextAlignment(.center)
+                    .frame(height: 30)
                 #warning("стиль текста + ячейки фиксированного размера")
             }
             
@@ -42,6 +44,6 @@ struct DishesImageView: View {
 
 struct DishesImageView_Previews: PreviewProvider {
     static var previews: some View {
-        DishesView()
+        DishesView(category: CategoryItem(id: 1, name: "ymmy", imageURL: ""))
     }
 }

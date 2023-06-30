@@ -8,34 +8,38 @@
 import SwiftUI
 
 struct MainTabView: View {
-    
+    @State private var selection = 0
     var body: some View {
-        TabView {
-            MainView()
-                .tabItem {
-                    Image("main")
-                    Text("Главная")
-                }
+        TabView(selection: $selection) {
+            NavigationView {
+                MainView()
+            }.tabItem {
+                Image("main")
+                Text("Главная")
+            }
+            .tag(0)
             
             Text("пусто")
                 .tabItem {
                     Image("search")
-                    Text("Главная")
-                }
+                    Text("Поиск")
+                }.tag(1)
             
             BucketView()
                 .tabItem {
                     Image("bucket")
-                    Text("Главная")
-                }
+                    Text("Корзина")
+                }.tag(2)
             
             Text("пусто")
                 .tabItem {
                     Image("account")
-                    Text("Главная")
-                }
+                    Text("Аккаунт")
+                }.tag(3)
+            
         }
         .accentColor(Color("blueButton"))
+        
         
     }
 }

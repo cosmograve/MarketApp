@@ -10,6 +10,7 @@ import SwiftUI
 struct MainView: View {
     @StateObject private var viewModel = MainViewViewModel()
     var body: some View {
+        
         VStack {
             MainHeaderView()
                 .padding(.top, 8)
@@ -17,7 +18,11 @@ struct MainView: View {
             Spacer()
             if let categories = viewModel.categories {
                 ForEach(categories) { category in
-                    CategoryImageView(categoryItem: category)
+                    NavigationLink {                        
+                        DishesView(category: category)
+                    } label: {
+                        CategoryImageView(categoryItem: category)
+                    }
                 }
             }
         }

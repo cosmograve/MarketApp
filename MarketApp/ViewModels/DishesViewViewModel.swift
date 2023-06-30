@@ -13,7 +13,9 @@ class DishesViewViewModel: ObservableObject {
     @Published var dishes: [DishesItem]?
     private let dataService = DishesDataService()
     private var cancellables = Set<AnyCancellable>()
+    
     init() {
+        
         addDishes()
     }
     

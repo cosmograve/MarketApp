@@ -10,6 +10,10 @@
 		3A7EEF432A4D68AC00929D2B /* DishesImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7EEF422A4D68AC00929D2B /* DishesImageService.swift */; };
 		3A7EEF452A4D6AD600929D2B /* DishesImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7EEF442A4D6AD600929D2B /* DishesImageView.swift */; };
 		3A7EEF472A4D6AEE00929D2B /* DishesImageViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7EEF462A4D6AEE00929D2B /* DishesImageViewViewModel.swift */; };
+		3A7EEF492A4DB23500929D2B /* DishesHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7EEF482A4DB23500929D2B /* DishesHeaderView.swift */; };
+		3A7EEF4B2A4DB29B00929D2B /* DishesHeaderViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7EEF4A2A4DB29B00929D2B /* DishesHeaderViewViewModel.swift */; };
+		3A7EEF4D2A4DE9D200929D2B /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7EEF4C2A4DE9D200929D2B /* DetailsView.swift */; };
+		3A7EEF512A4DECE600929D2B /* ViewControllerHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7EEF502A4DECE600929D2B /* ViewControllerHolder.swift */; };
 		3AAC35BE2A4B374D0060395E /* MarketAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAC35BD2A4B374D0060395E /* MarketAppApp.swift */; };
 		3AAC35C22A4B374F0060395E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AAC35C12A4B374F0060395E /* Assets.xcassets */; };
 		3AAC35C52A4B374F0060395E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AAC35C42A4B374F0060395E /* Preview Assets.xcassets */; };
@@ -37,6 +41,10 @@
 		3A7EEF422A4D68AC00929D2B /* DishesImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishesImageService.swift; sourceTree = "<group>"; };
 		3A7EEF442A4D6AD600929D2B /* DishesImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishesImageView.swift; sourceTree = "<group>"; };
 		3A7EEF462A4D6AEE00929D2B /* DishesImageViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishesImageViewViewModel.swift; sourceTree = "<group>"; };
+		3A7EEF482A4DB23500929D2B /* DishesHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishesHeaderView.swift; sourceTree = "<group>"; };
+		3A7EEF4A2A4DB29B00929D2B /* DishesHeaderViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishesHeaderViewViewModel.swift; sourceTree = "<group>"; };
+		3A7EEF4C2A4DE9D200929D2B /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
+		3A7EEF502A4DECE600929D2B /* ViewControllerHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerHolder.swift; sourceTree = "<group>"; };
 		3AAC35BA2A4B374D0060395E /* MarketApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarketApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AAC35BD2A4B374D0060395E /* MarketAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketAppApp.swift; sourceTree = "<group>"; };
 		3AAC35C12A4B374F0060395E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -95,7 +103,6 @@
 				3AAC35EB2A4C1B3D0060395E /* Services */,
 				3AAC35DE2A4B548A0060395E /* Managers */,
 				3AAC35DA2A4B4D1B0060395E /* Models */,
-				3AAC35DD2A4B50E80060395E /* Components */,
 				3AAC35CB2A4B381B0060395E /* Views */,
 				3AAC35FB2A4C9D2D0060395E /* ViewModels */,
 				3AAC35C32A4B374F0060395E /* Preview Content */,
@@ -119,6 +126,8 @@
 				3AAC35CE2A4B47BE0060395E /* MainView.swift */,
 				3AAC35F92A4C9D090060395E /* DishesView.swift */,
 				3AAC35D22A4B47DC0060395E /* BucketView.swift */,
+				3A7EEF4C2A4DE9D200929D2B /* DetailsView.swift */,
+				3AAC35DD2A4B50E80060395E /* Components */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -135,8 +144,10 @@
 		3AAC35DD2A4B50E80060395E /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				3A7EEF502A4DECE600929D2B /* ViewControllerHolder.swift */,
 				3AAC35D62A4B48CB0060395E /* BlueButton.swift */,
 				3AAC35D82A4B4B7A0060395E /* MainHeaderView.swift */,
+				3A7EEF482A4DB23500929D2B /* DishesHeaderView.swift */,
 				3AAC35F02A4C43FD0060395E /* CategoryImageView.swift */,
 				3A7EEF442A4D6AD600929D2B /* DishesImageView.swift */,
 			);
@@ -171,6 +182,7 @@
 				3AAC35FC2A4C9F200060395E /* DishesViewViewModel.swift */,
 				3AAC35E72A4C09B60060395E /* CategoryImageViewViewModel.swift */,
 				3A7EEF462A4D6AEE00929D2B /* DishesImageViewViewModel.swift */,
+				3A7EEF4A2A4DB29B00929D2B /* DishesHeaderViewViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -247,6 +259,7 @@
 			files = (
 				3AAC35D92A4B4B7A0060395E /* MainHeaderView.swift in Sources */,
 				3AAC35E82A4C09B60060395E /* CategoryImageViewViewModel.swift in Sources */,
+				3A7EEF4B2A4DB29B00929D2B /* DishesHeaderViewViewModel.swift in Sources */,
 				3AAC35FF2A4CA6AC0060395E /* DishesDataService.swift in Sources */,
 				3AAC35EA2A4C183D0060395E /* MainViewViewModel.swift in Sources */,
 				3AAC35D72A4B48CB0060395E /* BlueButton.swift in Sources */,
@@ -255,6 +268,7 @@
 				3AAC35F82A4C9AB30060395E /* DishesDataModel.swift in Sources */,
 				3AAC35F12A4C43FD0060395E /* CategoryImageView.swift in Sources */,
 				3AAC35EF2A4C28170060395E /* NetworkingManager.swift in Sources */,
+				3A7EEF4D2A4DE9D200929D2B /* DetailsView.swift in Sources */,
 				3A7EEF452A4D6AD600929D2B /* DishesImageView.swift in Sources */,
 				3AAC35E02A4B54BF0060395E /* LocationManager.swift in Sources */,
 				3AAC35CF2A4B47BE0060395E /* MainView.swift in Sources */,
@@ -262,10 +276,12 @@
 				3AAC35BE2A4B374D0060395E /* MarketAppApp.swift in Sources */,
 				3AAC35D32A4B47DC0060395E /* BucketView.swift in Sources */,
 				3AAC35ED2A4C1B830060395E /* CategoryDataService.swift in Sources */,
+				3A7EEF512A4DECE600929D2B /* ViewControllerHolder.swift in Sources */,
 				3AAC35E42A4C00D90060395E /* CategoriesDataModel.swift in Sources */,
 				3AAC35CD2A4B41B10060395E /* MainTabView.swift in Sources */,
 				3A7EEF472A4D6AEE00929D2B /* DishesImageViewViewModel.swift in Sources */,
 				3AAC35F32A4C4C6E0060395E /* CategoryImageService.swift in Sources */,
+				3A7EEF492A4DB23500929D2B /* DishesHeaderView.swift in Sources */,
 				3A7EEF432A4D68AC00929D2B /* DishesImageService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
