@@ -25,33 +25,23 @@ struct DishesView: View {
             DishesHeaderView(text: category.name)
                 .padding(.top, 8)
                 .padding(.horizontal, 16)
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack() {
-                    ForEach(1..<50, id:\.self) { n in
-                        BlueButton(title: "nnnnnnnnnnnn") {
-                            
-                        }
-                    }
-                }
-                .padding(.horizontal, 10)
-                .frame(height: 75)
-            }
+            
+            TagsView(searchTag: $viewModel.searchTag)
             
             ScrollView {
                 LazyVGrid(columns: columns, spacing: 30) {
-                    if let dishes = viewModel.dishes {
-                        ForEach(dishes) { dish in
-                            DishesImageView(dishesItem: dish)
-                                .onTapGesture {
-                                    self.viewControllerHolder?.present(style: .overCurrentContext, transitionStyle: .crossDissolve) {
-                                        DetailsView()
-                                    }
+                    let dishes = viewModel.dishes
+                    ForEach(dishes) { dish in
+                        DishesImageView(dishesItem: dish)
+                            .onTapGesture {
+                                self.viewControllerHolder?.present(style: .overCurrentContext, transitionStyle: .crossDissolve) {
+                                    DetailsView()
                                 }
-                        }
+                            }
                     }
                 }
             }.padding(12)
-                
+            
             
         }.navigationBarHidden(true)
     }

@@ -29,10 +29,20 @@ struct DishesItem: Codable, Identifiable {
     }
 }
 
-enum Tag: String, Codable {
+enum Tag: String, Codable, CaseIterable {
     case всеМеню = "Все меню"
     case сРисом = "С рисом"
     case сРыбой = "С рыбой"
     case салаты = "Салаты"
+    
+    init?(id: Int) {
+        switch id {
+        case 1: self = .всеМеню
+        case 2: self = .сРисом
+        case 3: self = .сРыбой
+        case 4: self = .салаты
+        default: return nil
+        }
+    }
 }
 #warning("codingKeys")

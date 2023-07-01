@@ -22,6 +22,7 @@ struct DetailsView: View {
             
         }.background(Color.white).clipShape(RoundedRectangle(cornerRadius: 3.0)).frame(width: UIScreen.main.bounds.size.width - 32)
             .shadow(radius: 3)
+            .cornerRadius(15)
         
     }
 }

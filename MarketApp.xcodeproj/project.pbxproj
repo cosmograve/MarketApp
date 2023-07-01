@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A1EE3022A50A77200A79927 /* TagsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1EE3012A50A77200A79927 /* TagsView.swift */; };
+		3A1EE3042A50A7E100A79927 /* TagsViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1EE3032A50A7E100A79927 /* TagsViewViewModel.swift */; };
 		3A7EEF432A4D68AC00929D2B /* DishesImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7EEF422A4D68AC00929D2B /* DishesImageService.swift */; };
 		3A7EEF452A4D6AD600929D2B /* DishesImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7EEF442A4D6AD600929D2B /* DishesImageView.swift */; };
 		3A7EEF472A4D6AEE00929D2B /* DishesImageViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7EEF462A4D6AEE00929D2B /* DishesImageViewViewModel.swift */; };
@@ -38,6 +40,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A1EE3012A50A77200A79927 /* TagsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsView.swift; sourceTree = "<group>"; };
+		3A1EE3032A50A7E100A79927 /* TagsViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsViewViewModel.swift; sourceTree = "<group>"; };
 		3A7EEF422A4D68AC00929D2B /* DishesImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishesImageService.swift; sourceTree = "<group>"; };
 		3A7EEF442A4D6AD600929D2B /* DishesImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishesImageView.swift; sourceTree = "<group>"; };
 		3A7EEF462A4D6AEE00929D2B /* DishesImageViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishesImageViewViewModel.swift; sourceTree = "<group>"; };
@@ -125,8 +129,8 @@
 				3AAC35CC2A4B41B10060395E /* MainTabView.swift */,
 				3AAC35CE2A4B47BE0060395E /* MainView.swift */,
 				3AAC35F92A4C9D090060395E /* DishesView.swift */,
-				3AAC35D22A4B47DC0060395E /* BucketView.swift */,
 				3A7EEF4C2A4DE9D200929D2B /* DetailsView.swift */,
+				3AAC35D22A4B47DC0060395E /* BucketView.swift */,
 				3AAC35DD2A4B50E80060395E /* Components */,
 			);
 			path = Views;
@@ -150,6 +154,7 @@
 				3A7EEF482A4DB23500929D2B /* DishesHeaderView.swift */,
 				3AAC35F02A4C43FD0060395E /* CategoryImageView.swift */,
 				3A7EEF442A4D6AD600929D2B /* DishesImageView.swift */,
+				3A1EE3012A50A77200A79927 /* TagsView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -183,6 +188,7 @@
 				3AAC35E72A4C09B60060395E /* CategoryImageViewViewModel.swift */,
 				3A7EEF462A4D6AEE00929D2B /* DishesImageViewViewModel.swift */,
 				3A7EEF4A2A4DB29B00929D2B /* DishesHeaderViewViewModel.swift */,
+				3A1EE3032A50A7E100A79927 /* TagsViewViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -261,10 +267,12 @@
 				3AAC35E82A4C09B60060395E /* CategoryImageViewViewModel.swift in Sources */,
 				3A7EEF4B2A4DB29B00929D2B /* DishesHeaderViewViewModel.swift in Sources */,
 				3AAC35FF2A4CA6AC0060395E /* DishesDataService.swift in Sources */,
+				3A1EE3042A50A7E100A79927 /* TagsViewViewModel.swift in Sources */,
 				3AAC35EA2A4C183D0060395E /* MainViewViewModel.swift in Sources */,
 				3AAC35D72A4B48CB0060395E /* BlueButton.swift in Sources */,
 				3AAC35FA2A4C9D090060395E /* DishesView.swift in Sources */,
 				3AAC35E22A4B621A0060395E /* MainHeaderViewViewModel.swift in Sources */,
+				3A1EE3022A50A77200A79927 /* TagsView.swift in Sources */,
 				3AAC35F82A4C9AB30060395E /* DishesDataModel.swift in Sources */,
 				3AAC35F12A4C43FD0060395E /* CategoryImageView.swift in Sources */,
 				3AAC35EF2A4C28170060395E /* NetworkingManager.swift in Sources */,
