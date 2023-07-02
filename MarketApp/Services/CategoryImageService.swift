@@ -30,7 +30,6 @@ class CategoryImageService {
             .sink(receiveCompletion: NetworkingManager.handleCompletion, receiveValue: { [weak self] (data) in
                 self?.image = data
                 self?.imageSubscription?.cancel()
-                print("cat image got")
             })
         
     }

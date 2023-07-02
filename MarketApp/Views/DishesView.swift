@@ -10,6 +10,7 @@ import SwiftUI
 struct DishesView: View {
     @Environment(\.viewController) private var viewControllerHolder: UIViewController?
     @StateObject private var viewModel = DishesViewViewModel()
+    @State private var isSelected = false
     private var category: CategoryItem
     private let columns = [
         GridItem(.flexible()),
@@ -26,7 +27,7 @@ struct DishesView: View {
                 .padding(.top, 8)
                 .padding(.horizontal, 16)
             
-            TagsView(searchTag: $viewModel.searchTag)
+            TagsView(isSelected: $isSelected, color: .blue, searchTag: $viewModel.searchTag)
             
             ScrollView {
                 LazyVGrid(columns: columns, spacing: 30) {

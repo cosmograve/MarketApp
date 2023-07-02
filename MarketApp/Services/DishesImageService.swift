@@ -30,7 +30,6 @@ class DishesImageService {
             .sink(receiveCompletion: NetworkingManager.handleCompletion, receiveValue: { [weak self] (data) in
                 self?.image = data
                 self?.imageSubscription?.cancel()
-                print("dish image got")
             })
         
     }

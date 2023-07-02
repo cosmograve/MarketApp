@@ -23,7 +23,6 @@ class DishesDataService {
             .decode(type: Dishes.self, decoder: JSONDecoder())
             .sink(receiveCompletion: NetworkingManager.handleCompletion, receiveValue: { [weak self] (data) in
                 self?.dishes = data
-                print(data)
             })
             .store(in: &cancellables)
         

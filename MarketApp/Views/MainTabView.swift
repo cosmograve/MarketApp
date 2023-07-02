@@ -8,16 +8,16 @@
 import SwiftUI
 
 struct MainTabView: View {
-    @State private var selection = 0
+    
     var body: some View {
-        TabView(selection: $selection) {
+        TabView() {
             NavigationView {
                 MainView()
             }.tabItem {
                 Image("main")
                 Text("Главная")
             }
-            .tag(0)
+            
             
             Text("пусто")
                 .tabItem {
@@ -25,7 +25,7 @@ struct MainTabView: View {
                     Text("Поиск")
                 }.tag(1)
             
-            BucketView()
+            BucketView(value: 0)
                 .tabItem {
                     Image("bucket")
                     Text("Корзина")

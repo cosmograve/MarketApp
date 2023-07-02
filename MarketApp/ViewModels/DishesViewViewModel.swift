@@ -20,14 +20,6 @@ class DishesViewViewModel: ObservableObject {
     }
     
     func addDishes() {
-//        dataService.$dishes
-//            .sink(receiveValue: { [weak self] returned in
-//                if let returned = returned {
-//                    self?.dishes = returned.dishes
-//                }
-//            })
-//            .store(in: &cancellables)
-        
         $searchTag
             .combineLatest(dataService.$dishes)
             .map { (tags, startDishes) -> [DishesItem] in
