@@ -26,8 +26,12 @@ struct CategoryImageView: View {
                 
                 Text(text)
                     .font(.system(size: 20, weight: .medium, design: .default))
-                    .frame(alignment: .leadingFirstTextBaseline)
+                    .multilineTextAlignment(.leading)
                     .padding(12)
+                    .kerning(0.2)
+                    .foregroundColor(.black)
+                    .frame(width: 191, height: 150, alignment: .topLeading)
+                    .lineLimit(2)
             }
             
         } else if viewModel.isLoading {

@@ -9,9 +9,10 @@ import SwiftUI
 
 struct DishesImageView: View {
     @StateObject private var viewModel: DishesImageViewViewModel
-    
-    init(dishesItem: DishesItem) {
+    var showingText: Bool
+    init(dishesItem: DishesItem, showingText: Bool) {
         _viewModel = StateObject(wrappedValue: DishesImageViewViewModel(dishesItem: dishesItem))
+        self.showingText = showingText
     }
     var body: some View {
         if let image = viewModel.image,
@@ -26,10 +27,15 @@ struct DishesImageView: View {
                         .aspectRatio(contentMode: .fit)
                         .clipped()
                 }
-                Text(text)
-                    .multilineTextAlignment(.center)
-                    .frame(height: 30)
-                #warning("стиль текста + ячейки фиксированного размера")
+                if showingText {
+                    Text(text)
+                        .font(.system(size: 14))
+                        .fontWeight(.regular)
+                        .kerning(0.14)
+                        .lineLimit(2)
+                        .frame(height: 60, alignment: .leading)
+                }
+                
             }
             
             

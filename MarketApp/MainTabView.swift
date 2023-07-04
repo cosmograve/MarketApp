@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct MainTabView: View {
-    
+    @StateObject var cartDataService = CartDataService()
+
     var body: some View {
         TabView() {
             NavigationView {
@@ -17,35 +18,31 @@ struct MainTabView: View {
                 Image("main")
                 Text("Главная")
             }
-            
-            
             Text("пусто")
                 .tabItem {
                     Image("search")
                     Text("Поиск")
-                }.tag(1)
-            
-            BucketView(value: 0)
+                }
+            CartView()
                 .tabItem {
-                    Image("bucket")
+                    Image("Cart")
                     Text("Корзина")
-                }.tag(2)
-            
+                }
             Text("пусто")
                 .tabItem {
                     Image("account")
                     Text("Аккаунт")
-                }.tag(3)
+                }
             
         }
         .accentColor(Color("blueButton"))
-        
-        
+        .environmentObject(cartDataService)
     }
 }
 
 struct MainTabView_Previews: PreviewProvider {
     static var previews: some View {
         MainTabView()
+            
     }
 }

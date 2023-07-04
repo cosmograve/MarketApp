@@ -9,25 +9,28 @@ import SwiftUI
 
 struct TagsView: View {
     @StateObject private var viewModel = TagsViewViewModel()
-    @Binding var isSelected: Bool
-    @State var color: Color
     @Binding var searchTag: Tag
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack() {
-                let tags = viewModel.text
-                ForEach(tags, id: \.self) { tag in
-                    Text("\(tag)")
-                        .padding()
-                        .frame(maxWidth: .infinity)
-                        .frame(height: 30)
-                        .background(isSelected ? .blue : .gray, in: RoundedRectangle(cornerRadius: 10, style: .continuous))
-                        .padding(.horizontal, 1)
-                        .onTapGesture {
-                            searchTag = Tag(rawValue: tag) ?? .всеМеню
-                            isSelected.toggle()
-    
+                
+                ForEach(Tag.allCases, id: \.self) { tag in
+                    
+                    Button {
+                        withAnimation {
+                            viewModel.choosenTag = tag
+                            searchTag = tag
                         }
+                        
+                    } label: {
+                        Text("\(tag.rawValue)")
+                            .font(Font.system(size: 14))
+                            .kerning(0.14)
+                            .foregroundColor(viewModel.choosenTag == tag ? Color.white : Color.black)
+                            .frame(width: 109, height: 30, alignment: .center)
+                            .background(viewModel.choosenTag == tag ? Color(red: 0.2, green: 0.39, blue: 0.88) : Color(red: 0.97, green: 0.97, blue: 0.96), in: RoundedRectangle(cornerRadius: 10, style: .continuous))
+                    }
+                    
                 }
             }
         }
@@ -36,7 +39,7 @@ struct TagsView: View {
 
 struct TagsView_Previews: PreviewProvider {
     static var previews: some View {
-        TagsView(isSelected: .constant(false), color: .gray, searchTag: .constant(.всеМеню))
+        TagsView(searchTag: .constant(.всеМеню))
         
     }
 }

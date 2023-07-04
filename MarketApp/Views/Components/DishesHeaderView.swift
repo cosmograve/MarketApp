@@ -24,6 +24,10 @@ struct DishesHeaderView: View {
             }
             Spacer()
             Text(text)
+                .font(Font.system(size: 18))
+                .fontWeight(.medium)
+                .foregroundColor(.black)
+                .multilineTextAlignment(.center)
             Spacer()
             Button {
                 viewModel.avatarTapped()

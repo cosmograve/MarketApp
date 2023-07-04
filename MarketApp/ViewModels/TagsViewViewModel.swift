@@ -9,14 +9,6 @@ import Foundation
 import SwiftUI
 
 class TagsViewViewModel: ObservableObject {
-    @Published var text: [String] = []
+    @Published var choosenTag: Tag = .всеМеню
     
-    init() {
-        for tag in Tag.allCases {
-            text.append(tag.rawValue)
-        }
-    }
-    func tap() {
-        
-    }
 }

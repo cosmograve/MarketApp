@@ -6,40 +6,32 @@
 //
 
 import SwiftUI
-enum StepperAction{
-    case minus, plus
-}
+
 class CustomStepperViewModel: ObservableObject {
-    @Published var counter: Int = 0
-    init() {
-        
-    }
-    func changeCounter(action: StepperAction) {
-        switch action {
-        case .minus:
-            if counter == 0 {
-                return
-            }
-            counter -= 1
-        case .plus:
-            counter += 1
-        }
-        
-    }
+
 }
 
 struct CustomStepper: View {
+    @EnvironmentObject var dataService: CartDataService
     @StateObject var viewModel = CustomStepperViewModel()
+    var count: Int
+    var id: Int
+    init(count: Int, id: Int) {
+        self.count = count
+        self.id = id
+    }
     var body: some View {
         HStack(alignment: .center, spacing: 16) {
             Button {
-                viewModel.changeCounter(action: .minus)
+                dataService.decrease()
+//                viewModel.changeCounter(action: .minus, id: id)
             } label: {
                 Image("minus")
             }
-            Text("\(viewModel.counter)")
+            Text("\(count)")
             Button {
-                viewModel.changeCounter(action: .plus)
+                dataService.increase()
+//                viewModel.changeCounter(action: .plus, id: id)
             } label: {
                 Image("plus")
             }
@@ -54,6 +46,6 @@ struct CustomStepper: View {
 
 struct CustomStepper_Previews: PreviewProvider {
     static var previews: some View {
-        CustomStepper()
+        CustomStepper(count: 0, id: 1)
     }
 }

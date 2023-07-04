@@ -9,8 +9,9 @@ import SwiftUI
 
 struct MainView: View {
     @StateObject private var viewModel = MainViewViewModel()
+    @EnvironmentObject var dataService: CartDataService
     var body: some View {
-        
+       
         VStack {
             MainHeaderView()
                 .padding(.top, 8)
@@ -18,8 +19,9 @@ struct MainView: View {
             Spacer()
             if let categories = viewModel.categories {
                 ForEach(categories) { category in
-                    NavigationLink {                        
+                    NavigationLink {
                         DishesView(category: category)
+                            .environmentObject(dataService)
                     } label: {
                         CategoryImageView(categoryItem: category)
                     }

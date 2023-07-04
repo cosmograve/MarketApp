@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct DishesView: View {
+    @EnvironmentObject var dataService: CartDataService
     @Environment(\.viewController) private var viewControllerHolder: UIViewController?
     @StateObject private var viewModel = DishesViewViewModel()
     @State private var isSelected = false
@@ -27,16 +28,20 @@ struct DishesView: View {
                 .padding(.top, 8)
                 .padding(.horizontal, 16)
             
-            TagsView(isSelected: $isSelected, color: .blue, searchTag: $viewModel.searchTag)
+            TagsView(searchTag: $viewModel.searchTag)
+                .padding(.leading, 16)
             
-            ScrollView {
+            ScrollView(showsIndicators: false) {
                 LazyVGrid(columns: columns, spacing: 30) {
                     let dishes = viewModel.dishes
                     ForEach(dishes) { dish in
-                        DishesImageView(dishesItem: dish)
+                        DishesImageView(dishesItem: dish, showingText: true)
+                        
                             .onTapGesture {
                                 self.viewControllerHolder?.present(style: .overCurrentContext, transitionStyle: .crossDissolve) {
-                                    DetailsView()
+                                    DetailsView(item: dish)
+                                        .environmentObject(dataService)
+                                    
                                 }
                             }
                     }

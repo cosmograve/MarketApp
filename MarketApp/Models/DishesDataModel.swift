@@ -21,7 +21,8 @@ struct DishesItem: Codable, Identifiable {
     let description: String
     let imageURL: String
     let tags: [Tag]
-
+    var quanity: Int = 1
+    
     enum CodingKeys: String, CodingKey {
         case id, name, price, weight, description
         case imageURL = "image_url"
