@@ -27,9 +27,13 @@ class MainHeaderViewViewModel: ObservableObject {
     }
     
     private func getLocation() {
-        locationManager.$userLocation
+        locationManager.$nameLocation
             .sink { [weak self] (returnedlocation) in
-                self?.cityName = "\(returnedlocation?.coordinate.longitude)"
+                guard let name = returnedlocation else {
+                    self?.cityName = ""
+                    return
+                }
+                self?.cityName = name
             }
             .store(in: &cancellables)
     }

@@ -7,20 +7,22 @@
 
 import Foundation
 import SwiftUI
+import Combine
 
-
-@MainActor final class CartDataService: ObservableObject {
+@MainActor class CartDataService: ObservableObject {
     
     @Published var cartItems: [DishesItem] = []
-//    @Published var cartItems: [DishesItem] = [DishesItem(id: 1, name: "12", price: 66, weight: 66, description: "234", imageURL: "", tags: [.всеМеню]),
-//                                              DishesItem(id: 2, name: "12", price: 36, weight: 66, description: "232434", imageURL: "", tags: [.всеМеню])
-//    ]
-
+    @Published var price: Int = 0
     
     func addToCart(cartItem: DishesItem) {
-        
-        cartItems.append(cartItem)
-        
+        if let _ = cartItems.firstIndex(where: { currentItem in
+            return cartItem.id == currentItem.id
+        }){
+            cartItem.quanity += 1
+        } else {
+            cartItem.quanity = 1
+            cartItems.append(cartItem)
+        }
     }
     
     func getTotalPrice() -> Int {
@@ -28,30 +30,25 @@ import SwiftUI
         cartItems.forEach { item in
             total += item.price * item.quanity
         }
+//        self.price = total
         return total
     }
     
-    func increase() {
-        
-//        cartItems.filter { $0.id == id }.first?.quanity += 1
+    func deleteItem(item: DishesItem) {
+        if let index = cartItems.firstIndex(where: { currentItem in
+            return item.id == currentItem.id
+        }){
+            cartItems.remove(at: index)
+        }
     }
     
-    func decrease() {
-//        if cartItems.filter({ $0.id == id }).first?.count == 1 {
-//            deleteFromCart(cartItem: cartItem)
-//        } else {
-//            cartItems.filter { $0.id == id }.first?.count -= 1
-//        }
-        
+    func increase(item: DishesItem) {
+        cartItems.filter({$0.id == item.id}).first?.quanity += 1
+        self.price = getTotalPrice()
     }
     
-    func deleteFromCart() {
-        
-//        if let index = cartItems.firstIndex(where: { currentItem in
-//            return cartItem.id == currentItem.id
-//        }){
-//            cartItems.remove(at: index)
-//        }
-            
+    func decrease(item: DishesItem) {
+        cartItems.filter({$0.id == item.id}).first?.quanity -= 1
+        self.price = getTotalPrice()
     }
 }

@@ -14,7 +14,7 @@ struct Dishes: Codable {
     }
 }
 
-struct DishesItem: Codable, Identifiable {
+class DishesItem: Codable, Identifiable {
     let id: Int
     let name: String
     let price, weight: Int
@@ -22,6 +22,17 @@ struct DishesItem: Codable, Identifiable {
     let imageURL: String
     let tags: [Tag]
     var quanity: Int = 1
+    
+    init(id: Int, name: String, price: Int, weight: Int, description: String, imageURL: String, tags: [Tag], quanity: Int) {
+        self.id = id
+        self.name = name
+        self.price = price
+        self.weight = weight
+        self.description = description
+        self.imageURL = imageURL
+        self.tags = tags
+        self.quanity = quanity
+    }
     
     enum CodingKeys: String, CodingKey {
         case id, name, price, weight, description
